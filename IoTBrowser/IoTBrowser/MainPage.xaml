@@ -30,9 +30,11 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="10"></ColumnDefinition>
                     <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBox Grid.Column="0" x:Name="Web_Address" FontSize="24" TextWrapping="Wrap" Text="http://www.bing.com" VerticalAlignment="Center" VerticalContentAlignment="Center" KeyUp="Web_Address_KeyUp" HorizontalAlignment="Stretch"/>
                 <Button Grid.Column="2" x:Name="Go_Web" Content="Go!" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="45" Click="Go_Web_Click"/>
+                <Button Grid.Column="3" x:Name="Go_Wifi" Content="Wifi" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="45" Click="Go_Wifi_Click"/>
             </Grid>
         </ScrollViewer>
     </Grid>

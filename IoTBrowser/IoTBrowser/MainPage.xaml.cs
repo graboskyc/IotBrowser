@@ -43,6 +43,11 @@ namespace IoTBrowser
             DoWebNavigate();
         }
 
+        private void Go_Wifi_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(WifiPage));
+        }
+
 
         private void Web_Address_KeyUp(object sender, KeyRoutedEventArgs e)
         {
