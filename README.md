@@ -18,3 +18,4 @@ After deployed, you need to set the app to be default for startup.
 Once deployed and set as the default app, whenever power is applied to the IOT device, the browser will launch.
 
 ![screenshot 1](Screenshots/Screenshot1.png)
+![screenshot 1](Screenshots/Screenshot2.jpg)
