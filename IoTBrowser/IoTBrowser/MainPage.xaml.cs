@@ -26,12 +26,14 @@ namespace IoTBrowser
         private void WebView_NavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
         {
             prog.Visibility = Visibility.Collapsed;
+            prog.IsActive = false;
             Go_Web.Visibility = Visibility.Visible;
         }
 
         private void WebView_NavigationStarting(WebView sender, WebViewNavigationStartingEventArgs args)
         {
             prog.Visibility = Visibility.Visible;
+            prog.IsActive = true;
             Go_Web.Visibility = Visibility.Collapsed;
         }
 
