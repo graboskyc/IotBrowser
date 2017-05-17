@@ -151,8 +151,17 @@ namespace IoTBrowser
         {
 
             WifiList item = (WifiList)e.ClickedItem;
-            //txtPassword.Text = item.SSID;
             _selectedSSID = item.SSID;
+            txtPassword.Text = "";
+
+            if(item.Icon.Contains("open"))
+            {
+                txtPassword.IsEnabled = false;
+            }
+            else
+            {
+                txtPassword.IsEnabled = true;
+            }
         }
     }
 }

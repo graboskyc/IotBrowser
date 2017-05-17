@@ -53,7 +53,7 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="100"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <TextBox Grid.Column="0" Name="txtPassword" HorizontalAlignment="Stretch" FontSize="24" VerticalAlignment="Center" VerticalContentAlignment="Center" Text="asd"></TextBox>
+                <TextBox Grid.Column="0" Name="txtPassword" HorizontalAlignment="Stretch" FontSize="24" VerticalAlignment="Center" VerticalContentAlignment="Center" PlaceholderText="password"></TextBox>
                 <Button Grid.Column="1" Name="btnConnect" Click="btnConnect_Click" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="95">Connect</Button>
             </Grid>
         </ScrollViewer>
