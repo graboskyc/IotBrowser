@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <!--Web view control-->
-        <WebView x:Name="webView" Grid.Row="0" />
+        <WebView x:Name="webView" Grid.Row="0" DOMContentLoaded="webView_DOMContentLoaded"/>
 
         <StackPanel x:Name="MessageStackPanel" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" >
             <TextBlock x:Name="Message" FontSize="30" Text="Display message here"/>
@@ -24,7 +24,7 @@
         </StackPanel>
 
         <!--Favorites buttons-->
-        <ScrollViewer Grid.Row="1" HorizontalAlignment="Stretch" HorizontalScrollBarVisibility ="Auto" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Row="1" HorizontalAlignment="Stretch">
             <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -33,8 +33,12 @@
                     <ColumnDefinition Width="50"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBox Grid.Column="0" x:Name="Web_Address" FontSize="24" TextWrapping="Wrap" Text="http://www.bing.com" VerticalAlignment="Center" VerticalContentAlignment="Center" KeyUp="Web_Address_KeyUp" HorizontalAlignment="Stretch"/>
-                <Button Grid.Column="2" x:Name="Go_Web" Content="Go!" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="45" Click="Go_Web_Click"/>
-                <Button Grid.Column="3" x:Name="Go_Wifi" Content="Wifi" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="45" Click="Go_Wifi_Click"/>
+                <ProgressBar Name="prog" Grid.Column="2" Visibility="Collapsed" IsIndeterminate="True"  />
+                <Button Grid.Column="2" x:Name="Go_Web" Content="Go!" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="45" Click="Go_Web_Click" Margin="0,3,5,2"/>
+
+                <Button Grid.Column="3" x:Name="Go_Wifi" Height="40" Width="45" Click="Go_Wifi_Click" >
+                    <Image Source="Assets/secure_5bar.png" Grid.Column="3" Stretch="Fill" VerticalAlignment="Top" Height="40" Margin="-10,-6"></Image>
+                </Button>
             </Grid>
         </ScrollViewer>
     </Grid>

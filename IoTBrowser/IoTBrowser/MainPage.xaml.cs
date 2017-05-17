@@ -18,7 +18,21 @@ namespace IoTBrowser
         public MainPage()
         {
             this.InitializeComponent();
+            webView.NavigationStarting += WebView_NavigationStarting;
+            webView.NavigationCompleted += WebView_NavigationCompleted;
             DoWebNavigate();
+        }
+
+        private void WebView_NavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
+        {
+            prog.Visibility = Visibility.Collapsed;
+            Go_Web.Visibility = Visibility.Visible;
+        }
+
+        private void WebView_NavigationStarting(WebView sender, WebViewNavigationStartingEventArgs args)
+        {
+            prog.Visibility = Visibility.Visible;
+            Go_Web.Visibility = Visibility.Collapsed;
         }
 
         // fullscreen mode
@@ -103,6 +117,11 @@ namespace IoTBrowser
         {
             webView.Visibility = Visibility.Visible;
             MessageStackPanel.Visibility = Visibility.Collapsed;
+        }
+
+        private void webView_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEventArgs args)
+        {
+            Web_Address.Text = webView.Source.ToString();
         }
     }
 }
