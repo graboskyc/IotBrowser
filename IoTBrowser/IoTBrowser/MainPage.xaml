@@ -37,7 +37,7 @@
                 <Button Grid.Column="2" x:Name="Go_Web" Content="Go!" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="45" Click="Go_Web_Click" Margin="0,3,5,2"/>
 
                 <Button Grid.Column="3" x:Name="Go_Wifi" Height="40" Width="45" Click="Go_Wifi_Click" >
-                    <Image Source="Assets/secure_5bar.png" Grid.Column="3" Stretch="Fill" VerticalAlignment="Top" Height="40" Margin="-10,-6"></Image>
+                    <Image Source="Assets/settings.png" Grid.Column="3" Stretch="Fill" VerticalAlignment="Top" Height="40" Margin="-10,-6"></Image>
                 </Button>
             </Grid>
         </ScrollViewer>

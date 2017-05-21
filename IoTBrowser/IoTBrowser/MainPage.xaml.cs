@@ -86,6 +86,14 @@ namespace IoTBrowser
                     {
                         webView.Navigate(new Uri(Web_Address.Text));
                     }
+                    else if (Web_Address.Text == "wifi")
+                    {
+                        this.Frame.Navigate(typeof(WifiPage));
+                    }
+                    else if (Web_Address.Text == "debug")
+                    {
+                        this.Frame.Navigate(typeof(DebugPage));
+                    }
                     else
                     {
                         Web_Address.Text = "http://" + Web_Address.Text;

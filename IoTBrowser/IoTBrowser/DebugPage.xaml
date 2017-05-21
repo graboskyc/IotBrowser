@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="IoTBrowser.DebugPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IoTBrowser"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="120"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock FontSize="36" Grid.RowSpan="2">Debug Page</TextBlock>
+
+        <ScrollViewer Grid.Row="1" HorizontalAlignment="Stretch" HorizontalScrollBarVisibility ="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="btn_run" Click="btn_run_Click" Grid.Column="0" HorizontalAlignment="Stretch">Run I2C</Button>
+                <Button Name="btn_shutdown" Click="btn_shutdown_Click" Grid.Column="2" HorizontalAlignment="Stretch">Shutdown</Button>
+                <Button Name="btn_restart" Click="btn_restart_Click" Grid.Column="4" HorizontalAlignment="Stretch">Restart</Button>
+
+            </Grid>
+        </ScrollViewer>
+
+
+        <TextBlock Name="txt_main" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Row="2"></TextBlock>
+
+
+
+        <ScrollViewer Grid.Row="3" HorizontalAlignment="Stretch" HorizontalScrollBarVisibility ="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0">
+                    <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Top" FontSize="24" FontWeight="Bold">Device Name: </TextBlock>
+                    <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Top" FontSize="24" FontWeight="Bold">Network Name: </TextBlock>
+                    <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Top" FontSize="24" FontWeight="Bold">IP V4 Address: </TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1">
+                    <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Top" FontSize="24" Name="txt_device">Device Name</TextBlock>
+                    <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Top" FontSize="24" Name="txt_network">Network Name</TextBlock>
+                    <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Top" FontSize="24"  Name="txt_addr">IP V4 Address</TextBlock>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+  
+        
+    </Grid>
+</Page>

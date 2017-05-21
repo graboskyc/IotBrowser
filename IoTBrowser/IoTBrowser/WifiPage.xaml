@@ -21,11 +21,24 @@
         <ScrollViewer Grid.Row="1" HorizontalAlignment="Stretch" HorizontalScrollBarVisibility ="Auto" VerticalScrollBarVisibility="Auto">
             <Grid >
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Name="btnScan" Click="btnScan_Click" Grid.Column="0">Scan For Networks</Button>
-                <Button Name="btnBrowser" Click="btnBrowser_Click" Grid.Column="1">Back To Browser</Button>
+                <Button Name="btnScan" Click="btnScan_Click" Grid.Column="0" HorizontalAlignment="Stretch">Scan</Button>
+                <Button Name="btnBrowser" Click="btnBrowser_Click" Grid.Column="2" HorizontalAlignment="Stretch">Back</Button>
+                <Button Name="btn_shutdown" Click="btn_shutdown_Click" Grid.Column="4" HorizontalAlignment="Stretch">Shutdown</Button>
+                <Button Name="btn_restart" Click="btn_restart_Click" Grid.Column="6" HorizontalAlignment="Stretch">Restart</Button>
+                <StackPanel Grid.Column="8">
+                    <Image Source="Assets\battery.png" Width="25" Height=" 25" />
+                    <TextBlock Name="txt_battper" Text="??%" FontSize="24" HorizontalAlignment="Center" />
+                </StackPanel>
             </Grid>
         </ScrollViewer>
 

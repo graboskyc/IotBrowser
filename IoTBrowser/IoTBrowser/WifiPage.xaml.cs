@@ -20,6 +20,7 @@ using System.Text;
 using Windows.Networking.Connectivity;
 using Windows.Security.Credentials;
 using Windows.Devices.Enumeration;
+using Windows.System;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -141,10 +142,18 @@ namespace IoTBrowser
                         result = await wa.ConnectAsync(availableNetwork, reconnectionKind);
                     }
                 }
-            }
+            }      
 
-            
+        }
 
+        private void btn_shutdown_Click(object sender, RoutedEventArgs e)
+        {
+            ShutdownManager.BeginShutdown(ShutdownKind.Shutdown, new TimeSpan(0));
+        }
+
+        private void btn_restart_Click(object sender, RoutedEventArgs e)
+        {
+            ShutdownManager.BeginShutdown(ShutdownKind.Restart, new TimeSpan(0));
         }
 
         private void report_lv_ItemClick(object sender, ItemClickEventArgs e)
