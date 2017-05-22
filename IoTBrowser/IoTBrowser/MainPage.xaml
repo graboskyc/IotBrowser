@@ -32,7 +32,7 @@
         </ScrollViewer>
 
         <!--Web view control-->
-        <WebView x:Name="webView" Grid.Row="1" DOMContentLoaded="webView_DOMContentLoaded"/>
+        <WebView x:Name="webView" Grid.Row="1" />
 
         <StackPanel x:Name="MessageStackPanel" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" >
             <TextBlock x:Name="Message" FontSize="30" Text="Display message here"/>
