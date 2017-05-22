@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Windows.Security.Credentials;
 using Windows.Devices.Enumeration;
 using Windows.System;
+using Windows.Networking.Connectivity;
 
 namespace IoTBrowser
 {
@@ -26,6 +27,13 @@ namespace IoTBrowser
             this.InitializeComponent();
 
             this._wifiScanner = new WiFiScanner();
+
+            var hostname = NetworkInformation.GetHostNames()[0];
+            var icp = NetworkInformation.GetInternetConnectionProfile();
+
+            txt_addr.Text = IoTHelpers.Boards.DeviceInformation.GetIpAddress();
+            txt_device.Text = hostname.CanonicalName;
+            txt_network.Text = icp.ProfileName;
         }
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
