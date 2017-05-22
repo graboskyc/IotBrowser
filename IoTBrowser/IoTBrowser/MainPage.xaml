@@ -11,12 +11,28 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
+            <RowDefinition Height="45" x:Name='TabControlRow'></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="45" x:Name='BrowserControlRow'></RowDefinition>
         </Grid.RowDefinitions>
 
+        <ScrollViewer Grid.Row="0" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Disabled">
+            <ListView x:Name="lv_tabs" IsItemClickEnabled="True" ItemClick="lv_tabs_ItemClick">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Name, Mode=TwoWay}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollViewer>
+
         <!--Web view control-->
-        <WebView x:Name="webView" Grid.Row="0" DOMContentLoaded="webView_DOMContentLoaded"/>
+        <WebView x:Name="webView" Grid.Row="1" DOMContentLoaded="webView_DOMContentLoaded"/>
 
         <StackPanel x:Name="MessageStackPanel" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" >
             <TextBlock x:Name="Message" FontSize="30" Text="Display message here"/>
@@ -24,7 +40,7 @@
         </StackPanel>
 
         <!--Favorites buttons-->
-        <ScrollViewer Grid.Row="1" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Disabled">
+        <ScrollViewer Grid.Row="2" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Disabled">
             <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
